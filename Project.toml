@@ -1,0 +1,16 @@
+name = "MySqrt"
+uuid = "64fa8736-48e9-44c6-bc39-4b8eaa0b8b52"
+authors = ["Eduardo Lenz <eduardobarplenz@gmail.com> and contributors"]
+version = "1.0.0-DEV"
+
+[deps]
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
