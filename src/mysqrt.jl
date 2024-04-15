@@ -10,6 +10,11 @@ function Sqrt(A::AbstractMatrix)
 	# Check if it is square
 	m==n || throw("Sqrt:: Matrix should be square")
 
+	# Check if A is diagonal...we cannot miss this oportunity :o)
+	if isdiag(A)
+		return sqrt.(A)
+	end
+
 	# Schur decomposition of A
 	S,U = Schur{Complex}(schur(A))
 
