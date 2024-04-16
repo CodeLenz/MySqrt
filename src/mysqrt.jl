@@ -10,6 +10,10 @@ function Sqrt(A::AbstractMatrix)
 	# Check if it is square
 	m==n || throw("Sqrt:: Matrix should be square")
 
+    # For some reason, very small numbers cause a catastrofic
+	# error in sqrt and Sqrt. 
+	A[abs.(A).<sqrt(eps(1.0))].=0
+
 	# Check if A is diagonal...we cannot miss this oportunity :o)
 	if isdiag(A)
 		return sqrt.(A)
