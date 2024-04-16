@@ -28,7 +28,7 @@ function Sqrt(A::AbstractMatrix)
 
     # Check if matrix has sqrt
 	# by looking for zeros in D
-	any(isapprox.(D,0)) && throw("Sqrt:: matrix has no sqrt ")
+	# any(isapprox.(D,0)) && throw("Sqrt:: matrix has no sqrt ")
 	
 	# sqrt of main diagonal of S
 	X = diagm(sqrt.(D))
