@@ -13,6 +13,7 @@ function Sqrt(A::AbstractMatrix)
     # For some reason, very small numbers cause a catastrofic
 	# error in sqrt and Sqrt. It should be something related
 	# to schur(A)
+	println("cleaning")
 	A[abs.(A).<sqrt(eps(1.0))].=zero(eltype(A))
 
 	# Check if A is diagonal...we cannot miss this oportunity :o)
