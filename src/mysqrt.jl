@@ -41,6 +41,7 @@ function Sqrt(A::AbstractMatrix)
 				X2 = @view X[k,j]
 				somat = transpose(X1)*X2
 				denom = X[i,i]+X[j,j]
+				isapprox(abs(denom),0) && throw("Sqrt::division by zero")	
     		  	X[i,j] = (S[i,j]-somat)/(denom)
    			end
   		end
