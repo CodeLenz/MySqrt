@@ -16,9 +16,9 @@ function Sqrt(A::AbstractMatrix)
 	A[abs.(A).<sqrt(eps(1.0))].=zero(eltype(A))
 
 	# Check if A is diagonal...we cannot miss this oportunity :o)
-	#if isdiag(A)
-	#	return sqrt.(A)
-	#end
+	if isdiag(A)
+		return sqrt.(A)
+	end
 
 	# Schur decomposition of A
 	S,U = Schur{Complex}(schur(A))
